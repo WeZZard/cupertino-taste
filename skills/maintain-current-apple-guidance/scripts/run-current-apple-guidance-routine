@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+"""Compose source check, conditional Codex review, and acceptance."""
+
+import sys
+
+from guidance_check.cli import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(["run"] + sys.argv[1:]))

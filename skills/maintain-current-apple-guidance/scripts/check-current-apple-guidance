@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+"""Fetch, normalize, compare, and report current Apple guidance."""
+
+import sys
+
+from guidance_check.cli import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(["check"] + sys.argv[1:]))

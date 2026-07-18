@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "normalizer_version": "synthetic-v1",
+  "max_response_bytes": 500000,
+  "review_target": "skills/design-fluid-interface/references/current-apple-guidance.md",
+  "sources": [
+    {
+      "id": "synthetic-guide",
+      "canonical_url": "https://developer.apple.com/design/synthetic-guide",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/synthetic-guide.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Synthetic/response",
+      "expected_title": "Synthetic guide",
+      "affected_sections": ["Synthetic section"]
+    },
+    {
+      "id": "synthetic-guide",
+      "canonical_url": "https://developer.apple.com/design/second-synthetic-guide",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/second-synthetic-guide.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Synthetic/second-response",
+      "expected_title": "Second synthetic guide",
+      "affected_sections": ["Second synthetic section"]
+    }
+  ]
+}

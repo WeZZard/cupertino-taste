@@ -1,0 +1,6 @@
+interface:
+  display_name: "Maintain Current Apple Guidance"
+  short_description: "Review prepared Apple guidance snapshots"
+  default_prompt: "Use $maintain-current-apple-guidance to review the prepared source report and return the required JSON decision without editing files."
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+"""Invoke the maintenance skill with Codex headless mode."""
+
+import sys
+
+from guidance_check.cli import main
+
+
+if __name__ == "__main__":
+    raise SystemExit(main(["review"] + sys.argv[1:]))

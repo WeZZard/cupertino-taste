@@ -21,3 +21,9 @@ This repository distributes original design guidance and never stores raw Apple 
 - Run `claude plugin validate --strict .` before committing a plugin change.
 - Test each skill through Claude Code with prompts that should invoke it and near-miss prompts that should not.
 - Keep the worktree free of downloaded source material and generated evaluation results.
+
+## Current-guidance maintenance
+
+- Run `skills/maintain-current-apple-guidance/scripts/run-current-apple-guidance-routine` from the repository root to recheck the Apple sources behind `current-apple-guidance.md`.
+- Do not advance `Last checked` or edit `data/baseline.json` manually. The acceptance command binds both to a complete source report and, when normalized content changed, a validated Codex receipt.
+- Keep raw responses, normalized snapshots, Codex events, results, and receipts in the private archive outside Git. Only the source manifest, accepted hashes, original synthesis, scripts, and synthetic fixtures belong in this repository.

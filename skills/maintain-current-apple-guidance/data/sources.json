@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "normalizer_version": "apple-guidance-v1",
+  "max_response_bytes": 2000000,
+  "review_target": "skills/design-fluid-interface/references/current-apple-guidance.md",
+  "sources": [
+    {
+      "id": "hig-motion",
+      "canonical_url": "https://developer.apple.com/design/human-interface-guidelines/motion",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/motion.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Human-Interface-Guidelines/motion",
+      "expected_title": "Motion",
+      "affected_sections": ["What remains current", "Modern qualifications", "Reduce Motion behavior", "Platform cautions"]
+    },
+    {
+      "id": "hig-gestures",
+      "canonical_url": "https://developer.apple.com/design/human-interface-guidelines/gestures",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/gestures.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Human-Interface-Guidelines/gestures",
+      "expected_title": "Gestures",
+      "affected_sections": ["What remains current", "Modern qualifications", "Accessibility gate", "Platform cautions"]
+    },
+    {
+      "id": "hig-feedback",
+      "canonical_url": "https://developer.apple.com/design/human-interface-guidelines/feedback",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/feedback.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Human-Interface-Guidelines/feedback",
+      "expected_title": "Feedback",
+      "affected_sections": ["What remains current", "Modern qualifications"]
+    },
+    {
+      "id": "hig-design-principles",
+      "canonical_url": "https://developer.apple.com/design/human-interface-guidelines/design-principles",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/design-principles.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Human-Interface-Guidelines/design-principles",
+      "expected_title": "Design principles",
+      "affected_sections": ["What remains current", "Modern qualifications"]
+    },
+    {
+      "id": "hig-accessibility",
+      "canonical_url": "https://developer.apple.com/design/human-interface-guidelines/accessibility",
+      "fetch_url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/accessibility.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/design/Human-Interface-Guidelines/accessibility",
+      "expected_title": "Accessibility",
+      "affected_sections": ["Accessibility gate", "Reduce Motion behavior", "Platform cautions"]
+    },
+    {
+      "id": "reduced-motion-criteria",
+      "canonical_url": "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria",
+      "fetch_url": "https://developer.apple.com/help/app-store-connect/manage-app-accessibility/reduced-motion-evaluation-criteria",
+      "adapter": "html-article",
+      "expected_content_type": "text/html",
+      "expected_identifier": "",
+      "expected_title": "Reduced Motion evaluation criteria",
+      "affected_sections": ["Accessibility gate", "Reduce Motion behavior"]
+    },
+    {
+      "id": "swiftui-reduce-motion",
+      "canonical_url": "https://developer.apple.com/documentation/swiftui/environmentvalues/accessibilityreducemotion",
+      "fetch_url": "https://developer.apple.com/tutorials/data/documentation/swiftui/environmentvalues/accessibilityreducemotion.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/documentation/SwiftUI/EnvironmentValues/accessibilityReduceMotion",
+      "expected_title": "accessibilityReduceMotion",
+      "affected_sections": ["Reduce Motion behavior"]
+    },
+    {
+      "id": "uikit-reduce-motion",
+      "canonical_url": "https://developer.apple.com/documentation/uikit/uiaccessibility/isreducemotionenabled",
+      "fetch_url": "https://developer.apple.com/tutorials/data/documentation/uikit/uiaccessibility/isreducemotionenabled.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/documentation/UIKit/UIAccessibility/isReduceMotionEnabled",
+      "expected_title": "isReduceMotionEnabled",
+      "affected_sections": ["Reduce Motion behavior"]
+    },
+    {
+      "id": "appkit-reduce-motion",
+      "canonical_url": "https://developer.apple.com/documentation/appkit/nsworkspace/accessibilitydisplayshouldreducemotion",
+      "fetch_url": "https://developer.apple.com/tutorials/data/documentation/appkit/nsworkspace/accessibilitydisplayshouldreducemotion.md",
+      "adapter": "docc-markdown",
+      "expected_content_type": "text/markdown",
+      "expected_identifier": "/documentation/AppKit/NSWorkspace/accessibilityDisplayShouldReduceMotion",
+      "expected_title": "accessibilityDisplayShouldReduceMotion",
+      "affected_sections": ["Reduce Motion behavior", "Platform cautions"]
+    }
+  ]
+}
