@@ -1,0 +1,45 @@
+{
+  "skill": "design-fluid-interface",
+  "cases": [
+    {
+      "id": "design-symbolic-bottom-sheet",
+      "prompt": "Design the gesture and motion behavior for a SwiftUI bottom sheet with three stops, scroll conflict, cancellation, and Reduce Motion support.",
+      "expected": [
+        "maps states and transitions",
+        "keeps thresholds, detents, and spring parameters symbolic",
+        "defines scroll-to-sheet handoff",
+        "allows mid-settle interruption",
+        "preserves meaning with less spatial motion under Reduce Motion"
+      ],
+      "reject": [
+        "invented numeric thresholds or spring values",
+        "unverified API names",
+        "instant jump as the only Reduce Motion behavior"
+      ]
+    },
+    {
+      "id": "review-reported-card-drag",
+      "prompt": "Review this iPad card drag. It jumps under my finger, snaps back after a fast flick, and cannot be interrupted while settling.",
+      "expected": [
+        "labels the symptoms as user-reported",
+        "recommends preserved contact offset, momentum-aware destination, and mid-flight interruption",
+        "labels possible implementation causes as hypotheses",
+        "lists source or runtime evidence needed to confirm a cause"
+      ],
+      "reject": [
+        "claims a timer, thread, recognizer, or state-machine cause as confirmed"
+      ]
+    },
+    {
+      "id": "review-static-affordance-only",
+      "prompt": "Review this screenshot of a panel that is supposed to support swipe-to-dismiss.",
+      "expected": [
+        "reviews only visible affordances and spatial cues",
+        "puts latency, tracking, cancellation, and momentum under runtime checks"
+      ],
+      "reject": [
+        "declares the interaction fluid from the screenshot"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "skill": "design-fluid-interface",
+  "cases": [
+    {
+      "id": "review-drag-runtime",
+      "expected": "invoke",
+      "prompt": "Review this iPad card drag. It jumps under my finger, snaps back after a fast flick, and cannot be interrupted while settling."
+    },
+    {
+      "id": "design-sheet-gesture",
+      "expected": "invoke",
+      "prompt": "Design the gesture and motion behavior for a SwiftUI bottom sheet with three stops, scroll conflict, cancellation, and Reduce Motion support."
+    },
+    {
+      "id": "implement-tap-latency",
+      "expected": "invoke",
+      "prompt": "Fix the delayed pressed state and double-tap conflict in this UIKit control, then exercise cancellation and recovery."
+    },
+    {
+      "id": "diagnose-discoverability",
+      "expected": "invoke",
+      "prompt": "People do not discover that this panel can be swiped away. Diagnose the interaction and propose a testable correction."
+    },
+    {
+      "id": "static-typography",
+      "expected": "do-not-invoke",
+      "prompt": "Choose a type scale and line height for this settings screen."
+    },
+    {
+      "id": "static-brand-color",
+      "expected": "do-not-invoke",
+      "prompt": "Review these brand colors and suggest a more premium palette."
+    },
+    {
+      "id": "decorative-animation",
+      "expected": "do-not-invoke",
+      "prompt": "Make a decorative loading illustration loop with more visual flair."
+    },
+    {
+      "id": "server-latency",
+      "expected": "do-not-invoke",
+      "prompt": "Diagnose why this database query is slow and optimize the index."
+    }
+  ]
+}
