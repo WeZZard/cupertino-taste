@@ -1,0 +1,19 @@
+name: Propose Release
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: propose-release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  propose:
+    if: github.repository == 'WeZZard/cupertino-taste'
+    uses: WeZZard/workflows/.github/workflows/propose-release.yml@v1.0.2
+    with:
+      version_file: .claude-plugin/plugin.json
+    secrets:
+      RELEASE_TOKEN: ${{ secrets.CUPERTINO_TASTE_RELEASE_TOKEN }}
+      OPENCODE_AUTH_JSON: ${{ secrets.OPENCODE_AUTH_JSON }}
+      OPENCODE_MODEL: ${{ secrets.OPENCODE_MODEL }}

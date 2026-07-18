@@ -1,0 +1,55 @@
+name: Release Complete
+
+on:
+  repository_dispatch:
+    types: [catalog-sync-complete]
+
+permissions:
+  statuses: write
+
+jobs:
+  complete:
+    runs-on: ubuntu-latest
+    if: github.repository == 'WeZZard/cupertino-taste'
+    steps:
+      - name: Apply catalog sync callback
+        env:
+          GH_TOKEN: ${{ secrets.CUPERTINO_TASTE_RELEASE_TOKEN }}
+          STATUS: ${{ github.event.client_payload.status }}
+          RELEASE_ID: ${{ github.event.client_payload.release_id }}
+          TAG: ${{ github.event.client_payload.tag }}
+          SHA: ${{ github.event.client_payload.sha }}
+          PR_URL: ${{ github.event.client_payload.pr_url }}
+          PREVIEW_URL: ${{ github.event.client_payload.preview_url }}
+        run: |
+          set -euo pipefail
+          if [ -z "$SHA" ]; then
+            echo "No SHA in callback payload — skipping commit status"
+            exit 0
+          fi
+          if [ "$STATUS" = "failed" ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+              -f state=failure \
+              -f context=wezzard/catalog-sync \
+              -f description="Catalog sync failed (release_id=${RELEASE_ID})" \
+              -f target_url="${PR_URL:-https://github.com/WeZZard/skills}"
+            exit 1
+          fi
+          if [ "$STATUS" = "pr_opened" ]; then
+            TARGET="${PREVIEW_URL:-$PR_URL}"
+            gh api "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+              -f state=pending \
+              -f context=wezzard/catalog-sync \
+              -f description="Catalog PR open for ${TAG}" \
+              -f target_url="${TARGET:-https://github.com/WeZZard/skills}"
+            exit 0
+          fi
+          if [ "$STATUS" = "merged" ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/statuses/${SHA}" \
+              -f state=success \
+              -f context=wezzard/catalog-sync \
+              -f description="Catalog merged for ${TAG}" \
+              -f target_url="${PR_URL:-https://github.com/WeZZard/skills}"
+            exit 0
+          fi
+          echo "Unknown status: $STATUS"

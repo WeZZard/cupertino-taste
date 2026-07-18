@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "cupertino-taste",
+  "displayName": "Cupertino Taste",
+  "version": "0.1.0",
+  "description": "Distilled by WeZZard in China, Assembled from WWDC.",
+  "author": {
+    "name": "WeZZard"
+  },
+  "homepage": "https://github.com/WeZZard/cupertino-taste",
+  "repository": "https://github.com/WeZZard/cupertino-taste",
+  "license": "MIT",
+  "keywords": [
+    "apple-platforms",
+    "claude-code",
+    "design",
+    "interface",
+    "wwdc"
+  ]
+}

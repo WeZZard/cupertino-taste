@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Re-run tag + release + dispatch (e.g. v0.1.0)
+        required: true
+        type: string
+      version:
+        description: Plugin version without v prefix (optional; derived from tag)
+        required: false
+        type: string
+
+concurrency:
+  group: release-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    if: github.repository == 'WeZZard/cupertino-taste'
+    uses: WeZZard/workflows/.github/workflows/release-plugin.yml@v1.0.0
+    with:
+      plugin_name: cupertino-taste
+      version_file: .claude-plugin/plugin.json
+      release_title_prefix: Cupertino Taste
+      source_repo: WeZZard/cupertino-taste
+      event_name: ${{ github.event_name }}
+      dispatch_tag: ${{ github.event.inputs.tag }}
+      dispatch_version: ${{ github.event.inputs.version }}
+    secrets:
+      RELEASE_TOKEN: ${{ secrets.CUPERTINO_TASTE_RELEASE_TOKEN }}

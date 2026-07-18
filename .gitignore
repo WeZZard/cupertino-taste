@@ -1,0 +1,7 @@
+.DS_Store
+.private/
+*.part
+corpus/
+downloads/
+evals/results/
+node_modules/
