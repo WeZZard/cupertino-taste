@@ -108,7 +108,7 @@ def review_with_codex(
     version = _codex_version(executable)
     atomic_write_json(result_path, {"pending": True})
     prompt = (
-        "Use $cupertino-taste:maintain-current-apple-guidance.\n"
+        "Use $maintain-current-apple-guidance.\n"
         "Review the prepared report at {0}.\n"
         "The expected report SHA-256 is {1}, and the check date is {2}.\n"
         "Read every normalized source snapshot listed in it and the current review target.\n"
