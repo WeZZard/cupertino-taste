@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "cupertino-taste",
   "displayName": "Cupertino Taste",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Distilled by WeZZard in China, Assembled from WWDC.",
   "author": {
     "name": "WeZZard"
