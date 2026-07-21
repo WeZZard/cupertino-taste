@@ -35,7 +35,7 @@ class RoutineError(Exception):
 
 
 def repository_root() -> Path:
-    return Path(__file__).resolve().parents[4]
+    return Path(__file__).resolve().parents[5]
 
 
 def canonical_json_bytes(value: Any) -> bytes:

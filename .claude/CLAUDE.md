@@ -11,9 +11,11 @@ This repository distributes original design guidance and never stores raw Apple 
 
 ## Plugin structure
 
-- Put every skill at `skills/<skill-name>/SKILL.md`.
+- Put installable Claude Code skills at `skills/<skill-name>/SKILL.md`.
+- Put repository-only Codex skills at `.agents/skills/<skill-name>/SKILL.md` as real directories, not symlinks into `skills/`.
 - Keep supporting references, examples, and scripts inside the owning skill directory unless several skills share them.
 - Reserve `design-fluid-interface` for guidance distilled from “Designing Fluid Interfaces,” WWDC 2018 session 803.
+- Keep `maintain-current-apple-guidance` repository-only. It must never appear under the plugin's `skills/` directory.
 - Store Claude Code project MCP configuration in `.mcp.json` if the project adds an MCP server later.
 
 ## Verification

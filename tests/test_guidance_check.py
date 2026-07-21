@@ -17,7 +17,7 @@ from unittest import mock
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-PACKAGE_PARENT = REPOSITORY_ROOT / "skills" / "maintain-current-apple-guidance" / "scripts"
+PACKAGE_PARENT = REPOSITORY_ROOT / ".agents" / "skills" / "maintain-current-apple-guidance" / "scripts"
 FIXTURES = Path(__file__).resolve().parent / "fixtures" / "guidance-check"
 sys.path.insert(0, str(PACKAGE_PARENT))
 
@@ -428,7 +428,7 @@ class PipelineValidationTests(unittest.TestCase):
             ),
         )
 
-    def test_headless_review_invokes_qualified_skill_without_running_codex(self) -> None:
+    def test_headless_review_invokes_repository_skill_without_running_codex(self) -> None:
         captured = {}
 
         def fake_run(command, *args, **kwargs):
@@ -442,6 +442,7 @@ class PipelineValidationTests(unittest.TestCase):
 
         schema_path = (
             REPOSITORY_ROOT
+            / ".agents"
             / "skills"
             / "maintain-current-apple-guidance"
             / "references"
@@ -461,7 +462,7 @@ class PipelineValidationTests(unittest.TestCase):
         self.assertTrue(receipt_path.is_file())
         self.assertTrue(
             captured["prompt"].startswith(
-                "Use $cupertino-taste:maintain-current-apple-guidance.\n"
+                "Use $maintain-current-apple-guidance.\n"
             )
         )
         self.assertIn(self.report["report_sha256"], captured["prompt"])
