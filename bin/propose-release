@@ -1,5 +1,0 @@
-#!/bin/sh
-set -eu
-
-exec npx --yes --package='github:WeZZard/workflows#v2.0.0' -- \
-  wezzard-release propose "$@"
